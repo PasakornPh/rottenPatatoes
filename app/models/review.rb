@@ -1,0 +1,8 @@
+class Review < ActiveRecord::Base
+    belongs_to :movie
+    belongs_to :moviegoer
+    
+    # review is valid only if it's associated with a movie:
+    validates :movie_id, :presence => true
+
+end

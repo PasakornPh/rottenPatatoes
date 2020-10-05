@@ -8,18 +8,19 @@
 
   %body
     %h1.title RottenPotatoes
+
+  #login
+    - if @current_user
+      %p.welcome Welcome, #{@current_user.name}!
+      = link_to 'Logout', logout_path, :method => :post
+    - else
+      %p.login= link_to 'Log in with Twitter', OmniAuth.login_path(:twitter)
+
     -# this goes just inside %body:
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
-
-  #login
-    - if @current_user
-      %p.welcome  Welcome, #{@current_user.name}!
-      = link_to 'Log Out', logout_path, :method => :post
-    - else
-      %p.login= link_to 'Log in with your Twitter account', '/auth/twitter'
 
     #main
       = yield
