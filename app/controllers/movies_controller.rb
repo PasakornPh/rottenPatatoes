@@ -3,34 +3,29 @@
 class MoviesController < ApplicationController
     skip_before_action :authenticate!, only: [ :show, :index ]
     def index
-      @movies = Movie.all.order(:title)
+        @movies = Movie.all.order(:title) 
     end
 
     def show
-        id = params[:id] # retrieve movie ID from URI route
-        @movie = Movie.find(id) # look up movie by unique ID
-        # will render app/views/movies/show.html.haml by default
+        id = params[:id]
+        @movie = Movie.find(id)
         if @current_user
             @review = @movie.reviews.find_by(:moviegoer_id => @current_user.id)
         end
-      end
+        render(:partial => 'movie_popup', :object=>@movie) if request.xhr?
+    end
 
     def new
         @movie = Movie.new
-        # default: render 'new' template
     end
     
-    # in movies_controller.rb
     def create
-        params.require(:movie)
-        permitted = params[:movie].permit(:title,:rating,:release_date)
-        @movie = Movie.create!(permitted)
-
+        @movie = Movie.new(movie_params)
         if @movie.save
             flash[:notice] = "#{@movie.title} was successfully created."
             redirect_to movie_path(@movie)
         else
-            render 'new' # note, 'new' template can access @movie's field values!
+            render 'new'
         end
     end
 
@@ -40,12 +35,11 @@ class MoviesController < ApplicationController
 
     def update
         @movie = Movie.find params[:id]
-        permitted = params[:movie].permit(:title,:rating,:release_date)
-        if @movie.update_attributes!(permitted)
+        if @movie.update(movie_params) 
             flash[:notice] = "#{@movie.title} was successfully updated."
-            redirect_to movie_path(@movie)
+            redirect_to movies_path(@movie)
         else
-            render 'edit' # note, 'edit' template can access @movie's field values!
+            render 'edit'
         end
     end
 
@@ -71,4 +65,10 @@ class MoviesController < ApplicationController
         @movies = @movies.with_many_fans    if params[:with_many_fans]
         @movies = @movies.recently_reviewed if params[:recently_reviewed]
     end
+
+    private 
+        def movie_params
+            params.require(:movie).permit(:title, :rating, :release_date, :description)
+        end
+
 end
