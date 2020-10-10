@@ -3,14 +3,13 @@
   %head
     %title RottenPotatoes!
     = stylesheet_link_tag 'application'
-    = javascript_pack_tag 'application'
-    = javascript_pack_tag 'custom'
-    = javascript_pack_tag 'movie_popup'
+    = javascript_pack_tag 'application'  
     = csrf_meta_tags
 
   %body
+    
     %h1.title
-      = link_to "RottenPotatoes" , movies_path
+      = link_to "RottenPotatoes", movies_path
 
   #login
     - if @current_user
@@ -25,5 +24,4 @@
     - elsif flash[:warning]
       #warning.message= flash[:warning]
     = yield
-
-  
+    

@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
         @movie = Movie.new(movie_params)
         if @movie.save
             flash[:notice] = "#{@movie.title} was successfully created."
-            redirect_to movies_path
+            redirect_to movie_path(@movie)
         else
             render 'new'
         end
@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
         @movie = Movie.find params[:id]
         if @movie.update(movie_params) 
             flash[:notice] = "#{@movie.title} was successfully updated."
-            redirect_to movies_path
+            redirect_to movie_path(@movie)
         else
             render 'edit'
         end
