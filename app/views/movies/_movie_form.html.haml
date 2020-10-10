@@ -14,4 +14,4 @@
 = select :movie, :rating, Movie.all_ratings
 
 = label :movie, :release_date, 'Released On'
-= date_select :movie, :release_date
+= date_select :movie, :release_date, :start_year => 1930
