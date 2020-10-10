@@ -10,7 +10,7 @@ setup: function() {
             url: $(this).attr('href'),
             timeout: 5000,
             success: MoviePopup.showMovieInfo,
-            error: function(xhrObj, textStatus, exception) { alert('Error!'); }
+            error: function(xhrObj, textStatus, exception) { alert('Please login first!'); }
             // 'success' and 'error' functions will be passed 3 args
             });
     return(false);
