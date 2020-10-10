@@ -3,7 +3,7 @@
 class MoviesController < ApplicationController
     skip_before_action :authenticate!, only: [ :show, :index ]
     def index
-      @movies = Movie.all
+      @movies = Movie.all.order(:title)
     end
 
     def show
