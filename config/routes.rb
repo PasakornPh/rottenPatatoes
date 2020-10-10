@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   get  'auth/:provider/callback' => 'sessions#create'
   post 'logout' => 'sessions#destroy'

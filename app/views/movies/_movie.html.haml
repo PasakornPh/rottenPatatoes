@@ -1,6 +1,7 @@
 -# A single row of the All Movies table
 
 %tr
+%tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
   %td= movie_counter + 1
   %td= movie.title 
   %td= movie.rating

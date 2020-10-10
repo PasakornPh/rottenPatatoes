@@ -22,8 +22,6 @@
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
-
-    #main
-      = yield
-  
+    = yield
+    = javascript_pack_tag 'custom'
   

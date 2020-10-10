@@ -1,14 +1,34 @@
 {
-  "application.js": "/packs/js/application-9afcbb5693aa87623e69.js",
-  "application.js.map": "/packs/js/application-9afcbb5693aa87623e69.js.map",
+  "application.js": "/packs/js/application-ba078b11b10df6dc14ef.js",
+  "application.js.map": "/packs/js/application-ba078b11b10df6dc14ef.js.map",
+  "custom.js": "/packs/js/custom-a142e7e448d0e13e8b1a.js",
+  "custom.js.map": "/packs/js/custom-a142e7e448d0e13e8b1a.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-9afcbb5693aa87623e69.js"
+        "/packs/js/application-ba078b11b10df6dc14ef.js"
       ],
       "js.map": [
-        "/packs/js/application-9afcbb5693aa87623e69.js.map"
+        "/packs/js/application-ba078b11b10df6dc14ef.js.map"
+      ]
+    },
+    "custom": {
+      "js": [
+        "/packs/js/custom-a142e7e448d0e13e8b1a.js"
+      ],
+      "js.map": [
+        "/packs/js/custom-a142e7e448d0e13e8b1a.js.map"
+      ]
+    },
+    "movie_list_filter": {
+      "js": [
+        "/packs/js/movie_list_filter-cd84ea8aa56a5362f842.js"
+      ],
+      "js.map": [
+        "/packs/js/movie_list_filter-cd84ea8aa56a5362f842.js.map"
       ]
     }
-  }
+  },
+  "movie_list_filter.js": "/packs/js/movie_list_filter-cd84ea8aa56a5362f842.js",
+  "movie_list_filter.js.map": "/packs/js/movie_list_filter-cd84ea8aa56a5362f842.js.map"
 }
