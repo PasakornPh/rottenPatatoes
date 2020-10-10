@@ -13,6 +13,34 @@
 
 %p#description= @movie.description
 
+%h3 Reviews:
+- if @review
+- else
+  = link_to 'Add Review', new_movie_review_path(@movie)
+%ul#details
+  
+  - @movie.reviews.each do |review|
+    %b Potatoes:
+    %tr
+    %td= review.potatoes
+    %tr
+      %td name :
+      %td= review.moviegoer.name
+      %td | comments : 
+      %tr
+        -if review.comments != ""
+          %td= review.comments
+        -else
+          %td= 'No Comment'
+
+        %br
+
+        -if @current_user.name == review.moviegoer.name
+          = link_to 'Edit review', edit_movie_review_path(@movie,review)
+          %label /
+          = link_to 'Delete review', movie_review_path(@movie,review), :method => :delete
+    %br
+
 -# modify last 2 lines of app/views/movies/show.html.haml to:
 = link_to 'Edit info', edit_movie_path(@movie) 
 %label /
@@ -20,8 +48,3 @@
 %label /
 -# This Delete link will not really be a link, but a form:
 = link_to 'Delete', movie_path(@movie), :method => :delete
-%label /
-- if @review 
-  = link_to 'Edit Review', edit_movie_review_path(@movie, @review)
-- else
-  = link_to 'Add Review', new_movie_review_path(@movie)

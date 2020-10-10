@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = Moviegoer.where(provider: auth['provider'], uid: auth['uid'] ).first 
     
     unless user     
-      user = Moviegoer.create_with_omniauth!(auth)   
+      user = Moviegoer.create_with_omniauth(auth)   
     end   
     
     session[:user_id] = user.id   

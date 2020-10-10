@@ -7,7 +7,8 @@
     = csrf_meta_tags
 
   %body
-    %h1.title RottenPotatoes
+    %h1.title
+      = link_to "RottenPotatoes" , movies_path
 
   #login
     - if @current_user
