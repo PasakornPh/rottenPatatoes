@@ -21047,3 +21047,2609 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 228ms (Views: 193.5ms | ActiveRecord: 2.4ms | Allocations: 51776)
 
 
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 07:42:44 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.1ms | Allocations: 3512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 54.2ms | Allocations: 13696)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 157.7ms | ActiveRecord: 3.5ms | Allocations: 51612)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 07:53:41 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 6.0ms | Allocations: 3465)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a49394e71448b5de6627
+Version: webpack 4.44.1
+Time: 1662ms
+Built at: 10/10/2020 7:53:45 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-d62ffcec162859fa18ff.js   128 KiB        application  [emitted] [immutable]  application
+      js/application-d62ffcec162859fa18ff.js.map   142 KiB        application  [emitted] [dev]        application
+               js/custom-a142e7e448d0e13e8b1a.js  4.36 KiB             custom  [emitted] [immutable]  custom
+           js/custom-a142e7e448d0e13e8b1a.js.map  3.68 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-cd84ea8aa56a5362f842.js   4.8 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-cd84ea8aa56a5362f842.js.map  4.36 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-aa25a32c1f2c2baf3c67.js  5.33 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-aa25a32c1f2c2baf3c67.js.map  5.02 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-d62ffcec162859fa18ff.js js/application-d62ffcec162859fa18ff.js.map
+Entrypoint custom = js/custom-a142e7e448d0e13e8b1a.js js/custom-a142e7e448d0e13e8b1a.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-cd84ea8aa56a5362f842.js js/movie_list_filter-cd84ea8aa56a5362f842.js.map
+Entrypoint movie_popup = js/movie_popup-aa25a32c1f2c2baf3c67.js js/movie_popup-aa25a32c1f2c2baf3c67.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 912 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-20
+
+ERROR in ./app/javascript/packs/movie_list_filter.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_list_filter.js 1:0-17
+
+ERROR in ./app/javascript/packs/custom.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/custom.js 1:0-17 1:0-17
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-17
+
+ERROR in ./app/javascript/packs/movie_popup.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_popup.js 1:0-17
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+  Rendered movies/index.html.haml within layouts/application (Duration: 3808.9ms | Allocations: 12989)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3891ms (Views: 3870.9ms | ActiveRecord: 0.6ms | Allocations: 30956)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:53:47 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 21.3ms | Allocations: 8066)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 33.5ms | ActiveRecord: 2.3ms | Allocations: 20752)
+
+
+Started GET "/movies/2/reviews/new" for 127.0.0.1 at 2020-10-10 07:53:49 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  Rendering reviews/new.html.haml within layouts/application
+  Rendered reviews/new.html.haml within layouts/application (Duration: 8.4ms | Allocations: 2731)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 19.6ms | ActiveRecord: 0.4ms | Allocations: 9115)
+
+
+Started POST "/movies/2/reviews" for 127.0.0.1 at 2020-10-10 07:53:50 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"LFgqmGAMQDUQcuUQDCCc/kU2wiUW0fqa3Sgmgg2g/s7pCLDLwieaZh6A58KoKe0VKz9fSfdF2BNiI/jyw/+SLw==", "review"=>{"potatoes"=>"1", "comments"=>""}, "commit"=>"Create Review", "movie_id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "moviegoer_id", "movie_id") VALUES (?, ?, ?, ?)[0m  [["potatoes", 1], ["comments", ""], ["moviegoer_id", 1], ["movie_id", 2]]
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/movies/2
+Completed 302 Found in 23ms (ActiveRecord: 4.0ms | Allocations: 5734)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:53:50 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 9.1ms | Allocations: 3158)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 1.4ms | Allocations: 9362)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:55:04 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 12.7ms | Allocations: 3148)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 38.9ms | ActiveRecord: 0.7ms | Allocations: 9351)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:55:16 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 19.0ms | Allocations: 7967)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 41.6ms | ActiveRecord: 0.9ms | Allocations: 18990)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:55:33 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 16.0ms | Allocations: 7993)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 32.8ms | ActiveRecord: 0.8ms | Allocations: 19002)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:55:47 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:28
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:28
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:28
+  Rendered movies/show.html.haml within layouts/application (Duration: 12.6ms | Allocations: 8067)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 27.3ms | ActiveRecord: 1.0ms | Allocations: 19074)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:55:58 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 18.0ms | Allocations: 7987)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 36.7ms | ActiveRecord: 0.9ms | Allocations: 19016)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:56:11 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 17.7ms | Allocations: 8060)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 35.6ms | ActiveRecord: 1.0ms | Allocations: 19083)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:56:27 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 16.3ms | Allocations: 8065)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 36.6ms | ActiveRecord: 1.0ms | Allocations: 19093)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:56:38 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 23.2ms | Allocations: 8063)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 49.4ms | ActiveRecord: 1.1ms | Allocations: 19071)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:56:44 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 18.1ms | Allocations: 8146)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 32.3ms | ActiveRecord: 0.9ms | Allocations: 19169)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:56:57 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 12.4ms | Allocations: 8138)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 31.7ms | ActiveRecord: 0.8ms | Allocations: 19165)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:57:10 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 21.6ms | Allocations: 8139)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 41.5ms | ActiveRecord: 0.8ms | Allocations: 19148)
+
+
+Started GET "/movies/2/reviews/20/edit" for 127.0.0.1 at 2020-10-10 07:58:00 -0700
+Processing by ReviewsController#edit as HTML
+  Parameters: {"movie_id"=>"2", "id"=>"20"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:28:in `edit'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:29:in `edit'
+  Rendering reviews/edit.html.haml within layouts/application
+  Rendered reviews/edit.html.haml within layouts/application (Duration: 9.0ms | Allocations: 2532)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 19.0ms | ActiveRecord: 0.4ms | Allocations: 9617)
+
+
+Started PUT "/movies/2/reviews/20" for 127.0.0.1 at 2020-10-10 07:58:08 -0700
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"bdvCxL3tzf9yB0OfmnqGoQ/B4Zf5VlTIYznEu8ZkosFiwiy6zWEqZVkR1PITTf9obGotTJuOLuX5pK8aNZTbSg==", "review"=>{"potatoes"=>"5", "comments"=>"Test"}, "commit"=>"Save Changes", "movie_id"=>"2", "id"=>"20"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."id" = ? LIMIT ?[0m  [["movie_id", 2], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:33:in `update'
+DEPRECATION WARNING: update_attributes! is deprecated and will be removed from Rails 6.1 (please, use update! instead) (called from update at /home/pasakorn/Desktop/rottenTomatoes/app/controllers/reviews_controller.rb:35)
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+  [1m[36mReview Update (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "potatoes" = ?, "comments" = ? WHERE "reviews"."id" = ?[0m  [["potatoes", 5], ["comments", "Test"], ["id", 20]]
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+Redirected to http://127.0.0.1:3000/movies/2
+Completed 302 Found in 23ms (ActiveRecord: 2.8ms | Allocations: 6721)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 07:58:08 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.2ms | Allocations: 3157)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 9374)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 07:58:16 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 6.3ms | Allocations: 3460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 16.1ms | Allocations: 8584)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.4ms | Allocations: 13506)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:00:21 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:21
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:27
+  Rendered movies/show.html.haml within layouts/application (Duration: 2.9ms | Allocations: 1599)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 7807)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:04:04 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:21
+  Rendered movies/show.html.haml within layouts/application (Duration: 1.9ms | Allocations: 788)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.4ms | Allocations: 6979)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2020-10-10 08:04:11 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:33:in `edit'
+  Rendering movies/edit.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 31.6ms | Allocations: 10873)
+  Rendered movies/edit.html.haml within layouts/application (Duration: 37.9ms | Allocations: 13051)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.2ms | Allocations: 18482)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:04:13 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:21
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.4ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 6981)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:04:27 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.6ms | Allocations: 5747)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 0.6ms | Allocations: 16761)
+
+
+Started GET "/movies/1/reviews/new" for 127.0.0.1 at 2020-10-10 08:04:29 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"1"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  Rendering reviews/new.html.haml within layouts/application
+  Rendered reviews/new.html.haml within layouts/application (Duration: 5.5ms | Allocations: 2581)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.3ms | ActiveRecord: 0.3ms | Allocations: 8743)
+
+
+Started POST "/movies/1/reviews" for 127.0.0.1 at 2020-10-10 08:04:30 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"i+vCIIccVvvehqsSmVCDzofYunDezHrBo7hg58CAzWKnXhc+66kLAGZdqne77uBfFonM6/SmmiLpXf+kZ2swPQ==", "review"=>{"potatoes"=>"1", "comments"=>""}, "commit"=>"Create Review", "movie_id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "moviegoer_id", "movie_id") VALUES (?, ?, ?, ?)[0m  [["potatoes", 1], ["comments", ""], ["moviegoer_id", 1], ["movie_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/movies/1
+Completed 302 Found in 17ms (ActiveRecord: 5.9ms | Allocations: 5061)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:04:30 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 4.4ms | Allocations: 1608)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 0.5ms | Allocations: 7818)
+
+
+Started GET "/movies/1/reviews/new" for 127.0.0.1 at 2020-10-10 08:04:31 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  Rendering reviews/new.html.haml within layouts/application
+  Rendered reviews/new.html.haml within layouts/application (Duration: 1.4ms | Allocations: 490)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 0.3ms | Allocations: 6089)
+
+
+Started POST "/movies/1/reviews" for 127.0.0.1 at 2020-10-10 08:04:32 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"wCWbSd2n+F04PMAOd6EvDi2xKl4i1AptZmj3vvBTMRfskE5XsRKlpoDnwWtVH0yfvOBcxQi+6o4sjWj9V7jMSA==", "review"=>{"potatoes"=>"1", "comments"=>""}, "commit"=>"Create Review", "movie_id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "moviegoer_id", "movie_id") VALUES (?, ?, ?, ?)[0m  [["potatoes", 1], ["comments", ""], ["moviegoer_id", 1], ["movie_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/movies/1
+Completed 302 Found in 19ms (ActiveRecord: 3.9ms | Allocations: 5073)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:04:32 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.5ms | Allocations: 2380)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 8587)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:04:38 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 4.1ms | Allocations: 3460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 11.4ms | Allocations: 8585)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms | Allocations: 13507)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:11:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.5ms | Allocations: 592)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a49394e71448b5de6627
+Version: webpack 4.44.1
+Time: 1392ms
+Built at: 10/10/2020 8:11:29 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-d62ffcec162859fa18ff.js   128 KiB        application  [emitted] [immutable]  application
+      js/application-d62ffcec162859fa18ff.js.map   142 KiB        application  [emitted] [dev]        application
+               js/custom-a142e7e448d0e13e8b1a.js  4.36 KiB             custom  [emitted] [immutable]  custom
+           js/custom-a142e7e448d0e13e8b1a.js.map  3.68 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-cd84ea8aa56a5362f842.js   4.8 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-cd84ea8aa56a5362f842.js.map  4.36 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-aa25a32c1f2c2baf3c67.js  5.33 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-aa25a32c1f2c2baf3c67.js.map  4.94 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-d62ffcec162859fa18ff.js js/application-d62ffcec162859fa18ff.js.map
+Entrypoint custom = js/custom-a142e7e448d0e13e8b1a.js js/custom-a142e7e448d0e13e8b1a.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-cd84ea8aa56a5362f842.js js/movie_list_filter-cd84ea8aa56a5362f842.js.map
+Entrypoint movie_popup = js/movie_popup-aa25a32c1f2c2baf3c67.js js/movie_popup-aa25a32c1f2c2baf3c67.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 912 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-20
+
+ERROR in ./app/javascript/packs/custom.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/custom.js 1:0-17 1:0-17
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-17
+
+ERROR in ./app/javascript/packs/movie_list_filter.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_list_filter.js 1:0-17
+
+ERROR in ./app/javascript/packs/movie_popup.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_popup.js 1:0-17
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+  Rendered movies/index.html.haml within layouts/application (Duration: 3108.5ms | Allocations: 4328)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3124ms (Views: 3121.1ms | ActiveRecord: 0.5ms | Allocations: 9135)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:11:49 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.4ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 11.4ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 7937)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:11:50 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (1.5ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.6ms | Allocations: 2400)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 23.9ms | ActiveRecord: 2.4ms | Allocations: 8640)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:12:02 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 17.2ms | Allocations: 3147)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 24.3ms | ActiveRecord: 0.7ms | Allocations: 9355)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:22:48 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 2.5ms | Allocations: 602)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 25.7ms | Allocations: 6373)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 38.0ms | ActiveRecord: 0.6ms | Allocations: 16827)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2020-10-10 08:22:49 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 12], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 8.2ms | Allocations: 3246)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 28.8ms | ActiveRecord: 0.9ms | Allocations: 13313)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:22:53 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.3ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 16.9ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.3ms | Allocations: 7942)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:22:58 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.3ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.4ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.4ms | Allocations: 7936)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:23:28 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.8ms | Allocations: 602)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 24.0ms | Allocations: 6649)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 34.2ms | ActiveRecord: 2.5ms | Allocations: 17641)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:23:29 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 9.6ms | Allocations: 4021)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 21.4ms | ActiveRecord: 1.8ms | Allocations: 14388)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:25:18 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 7.6ms | Allocations: 4680)
+  Rendered movies/index.html.haml within layouts/application (Duration: 22.2ms | Allocations: 11615)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 2.4ms | Allocations: 19310)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00007f9724df9c98>::MoviePopup):
+    6:   %td= movie.title 
+    7:   %td= movie.rating
+    8:   %td= movie.release_date
+    9:   %td= link_to "More about #{movie.title}", MoviePopup
+  
+app/views/movies/_movie.html.haml:9
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:26:42 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 8.4ms | Allocations: 3870)
+  Rendered movies/index.html.haml within layouts/application (Duration: 19.5ms | Allocations: 7466)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms | Allocations: 9195)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check -# A single row of the All Movies table
+
+%tr
+%tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+  %td= movie_counter + 1
+  %td= movie.title 
+  %td= movie.rating
+  %td= movie.release_date
+  %td= link_to "More about #{movie.title}", = render :partial => 'movie_popup'
+):
+1:    -# A single row of the All Movies table
+2:    
+3:    %tr
+4:    %tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+5:      %td= movie_counter + 1
+6:      %td= movie.title 
+7:      %td= movie.rating
+8:      %td= movie.release_date
+9:      %td= link_to "More about #{movie.title}", = render :partial => 'movie_popup'
+  
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:26:54 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 3.9ms | Allocations: 3869)
+  Rendered movies/index.html.haml within layouts/application (Duration: 15.3ms | Allocations: 7442)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms | Allocations: 9116)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check -# A single row of the All Movies table
+
+%tr
+%tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+  %td= movie_counter + 1
+  %td= movie.title 
+  %td= movie.rating
+  %td= movie.release_date
+  %td= link_to "More about #{movie.title}", = render :partial => 'movie_popup'
+):
+1:    -# A single row of the All Movies table
+2:    
+3:    %tr
+4:    %tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+5:      %td= movie_counter + 1
+6:      %td= movie.title 
+7:      %td= movie.rating
+8:      %td= movie.release_date
+9:      %td= link_to "More about #{movie.title}", = render :partial => 'movie_popup'
+  
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:27:00 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 3.9ms | Allocations: 3869)
+  Rendered movies/index.html.haml within layouts/application (Duration: 12.5ms | Allocations: 7442)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms | Allocations: 9116)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check -# A single row of the All Movies table
+
+%tr
+%tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+  %td= movie_counter + 1
+  %td= movie.title 
+  %td= movie.rating
+  %td= movie.release_date
+  %td= link_to "More about #{movie.title}", = render :partial => 'movie_popup', :collection=>@movies
+):
+1:    -# A single row of the All Movies table
+2:    
+3:    %tr
+4:    %tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+5:      %td= movie_counter + 1
+6:      %td= movie.title 
+7:      %td= movie.rating
+8:      %td= movie.release_date
+9:      %td= link_to "More about #{movie.title}", = render :partial => 'movie_popup', :collection=>@movies
+  
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/_movie.html.haml:9: syntax error, unexpected '='
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:27:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.4ms | Allocations: 3869)
+  Rendered movies/index.html.haml within layouts/application (Duration: 15.9ms | Allocations: 7444)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms | Allocations: 9118)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check -# A single row of the All Movies table
+
+%tr
+%tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+  %td= movie_counter + 1
+  %td= movie.title 
+  %td= movie.rating
+  %td= movie.release_date
+  %td= link_to "More about #{movie.title}", render :partial => 'movie_popup', :collection=>@movies
+):
+1:    -# A single row of the All Movies table
+2:    
+3:    %tr
+4:    %tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+5:      %td= movie_counter + 1
+6:      %td= movie.title 
+7:      %td= movie.rating
+8:      %td= movie.release_date
+9:      %td= link_to "More about #{movie.title}", render :partial => 'movie_popup', :collection=>@movies
+  
+app/views/movies/_movie.html.haml:9: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/views/movies/_movie.html.haml:9: syntax error, unexpected ',', expecting ')'
+app/views/movies/_movie.html.haml:9: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/views/movies/_movie.html.haml:9: syntax error, unexpected ',', expecting ')'
+app/views/movies/_movie.html.haml:9: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/views/movies/_movie.html.haml:9: syntax error, unexpected ',', expecting ')'
+app/views/movies/_movie.html.haml:9: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/views/movies/_movie.html.haml:9: syntax error, unexpected ',', expecting ')'
+app/views/movies/_movie.html.haml:9: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/views/movies/_movie.html.haml:9: syntax error, unexpected ',', expecting ')'
+app/views/movies/_movie.html.haml:9: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/views/movies/_movie.html.haml:9: syntax error, unexpected ',', expecting ')'
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:27:25 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie_popup.html.haml [7 times] (Duration: 5.5ms | Allocations: 4847)
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 17.6ms | Allocations: 7991)
+  Rendered movies/index.html.haml within layouts/application (Duration: 35.5ms | Allocations: 11564)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.5ms | Allocations: 13238)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: %h2 Details about #{@movie.title}
+    2: 
+    3: %ul#details
+    4:     %li
+  
+app/views/movies/_movie_popup.html.haml:1
+app/views/movies/_movie.html.haml:9
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:27:49 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie_popup.html.haml [7 times] (Duration: 7.7ms | Allocations: 4838)
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 15.5ms | Allocations: 7973)
+  Rendered movies/index.html.haml within layouts/application (Duration: 22.0ms | Allocations: 11547)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.5ms | Allocations: 13220)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: %h2 Details about #{@movie.title}
+    2: 
+    3: %ul#details
+    4:     %li
+  
+app/views/movies/_movie_popup.html.haml:1
+app/views/movies/_movie.html.haml:9
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:28:03 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie_popup.html.haml [7 times] (Duration: 8.8ms | Allocations: 4787)
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 16.1ms | Allocations: 7922)
+  Rendered movies/index.html.haml within layouts/application (Duration: 23.0ms | Allocations: 11494)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.4ms | Allocations: 13167)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for nil:NilClass):
+    3: %ul#details
+    4:     %li
+    5:         Rating:
+    6:         = @movie.rating
+    7:     %li
+    8:         Released on:
+    9:         = @movie.release_date.strftime("%B %d %Y")
+  
+app/views/movies/_movie_popup.html.haml:6
+app/views/movies/_movie.html.haml:9
+app/views/movies/index.html.haml:12
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:28:21 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.8ms | Allocations: 3462)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 15.0ms | Allocations: 8590)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.3ms | Allocations: 18311)
+
+
+Started GET "/movies/22" for 127.0.0.1 at 2020-10-10 08:28:22 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 22], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 22]]
+  ↳ app/views/movies/show.html.haml:20
+  Rendered movies/show.html.haml within layouts/application (Duration: 8.8ms | Allocations: 5850)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 16.9ms | ActiveRecord: 1.4ms | Allocations: 17202)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:29:02 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.5ms | Allocations: 592)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 3901bf620f6b9d8c85fb
+Version: webpack 4.44.1
+Time: 1303ms
+Built at: 10/10/2020 8:29:05 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-7292774a240a19a327c7.js   128 KiB        application  [emitted] [immutable]  application
+      js/application-7292774a240a19a327c7.js.map   142 KiB        application  [emitted] [dev]        application
+               js/custom-a142e7e448d0e13e8b1a.js  4.36 KiB             custom  [emitted] [immutable]  custom
+           js/custom-a142e7e448d0e13e8b1a.js.map  3.68 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-cd84ea8aa56a5362f842.js   4.8 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-cd84ea8aa56a5362f842.js.map  4.36 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-aa25a32c1f2c2baf3c67.js  5.33 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-aa25a32c1f2c2baf3c67.js.map  4.94 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-7292774a240a19a327c7.js js/application-7292774a240a19a327c7.js.map
+Entrypoint custom = js/custom-a142e7e448d0e13e8b1a.js js/custom-a142e7e448d0e13e8b1a.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-cd84ea8aa56a5362f842.js js/movie_list_filter-cd84ea8aa56a5362f842.js.map
+Entrypoint movie_popup = js/movie_popup-aa25a32c1f2c2baf3c67.js js/movie_popup-aa25a32c1f2c2baf3c67.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 911 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-20
+
+ERROR in ./app/javascript/packs/custom.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/custom.js 1:0-17 1:0-17
+
+ERROR in ./app/javascript/packs/movie_list_filter.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_list_filter.js 1:0-17
+
+ERROR in ./app/javascript/packs/movie_popup.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_popup.js 1:0-17
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-17
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'packs/alert' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 19:0-22
+
+  Rendered movies/index.html.haml within layouts/application (Duration: 3093.1ms | Allocations: 4307)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3121ms (Views: 3116.3ms | ActiveRecord: 0.6ms | Allocations: 9090)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:29:06 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 5.9ms | Allocations: 2286)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 13.1ms | ActiveRecord: 1.0ms | Allocations: 11353)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:29:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.2ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 12.7ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.4ms | Allocations: 7936)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2020-10-10 08:29:10 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 12], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.6ms | Allocations: 2372)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 17.7ms | ActiveRecord: 0.6ms | Allocations: 8577)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:29:12 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.7ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.9ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.3ms | Allocations: 7936)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:29:41 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.6ms | Allocations: 3460)
+  Rendered movies/index.html.haml within layouts/application (Duration: 13.2ms | Allocations: 7005)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a49394e71448b5de6627
+Version: webpack 4.44.1
+Time: 1102ms
+Built at: 10/10/2020 8:29:43 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-d62ffcec162859fa18ff.js   128 KiB        application  [emitted] [immutable]  application
+      js/application-d62ffcec162859fa18ff.js.map   142 KiB        application  [emitted] [dev]        application
+               js/custom-a142e7e448d0e13e8b1a.js  4.36 KiB             custom  [emitted] [immutable]  custom
+           js/custom-a142e7e448d0e13e8b1a.js.map  3.68 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-cd84ea8aa56a5362f842.js   4.8 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-cd84ea8aa56a5362f842.js.map  4.36 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-aa25a32c1f2c2baf3c67.js  5.33 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-aa25a32c1f2c2baf3c67.js.map  4.94 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-d62ffcec162859fa18ff.js js/application-d62ffcec162859fa18ff.js.map
+Entrypoint custom = js/custom-a142e7e448d0e13e8b1a.js js/custom-a142e7e448d0e13e8b1a.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-cd84ea8aa56a5362f842.js js/movie_list_filter-cd84ea8aa56a5362f842.js.map
+Entrypoint movie_popup = js/movie_popup-aa25a32c1f2c2baf3c67.js js/movie_popup-aa25a32c1f2c2baf3c67.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 912 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-20
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-17
+
+ERROR in ./app/javascript/packs/custom.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/custom.js 1:0-17 1:0-17
+
+ERROR in ./app/javascript/packs/movie_list_filter.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_list_filter.js 1:0-17
+
+ERROR in ./app/javascript/packs/movie_popup.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_popup.js 1:0-17
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2760ms (Views: 2756.0ms | ActiveRecord: 0.3ms | Allocations: 17842)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:29:46 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 10.7ms | Allocations: 6527)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 12775)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:34:55 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.8ms | Allocations: 3459)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: bc3b20fef92cfb728fe7
+Version: webpack 4.44.1
+Time: 1206ms
+Built at: 10/10/2020 8:34:58 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-e533204610cd764f461b.js   128 KiB        application  [emitted] [immutable]  application
+      js/application-e533204610cd764f461b.js.map   142 KiB        application  [emitted] [dev]        application
+               js/custom-a142e7e448d0e13e8b1a.js  4.36 KiB             custom  [emitted] [immutable]  custom
+           js/custom-a142e7e448d0e13e8b1a.js.map  3.68 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-cd84ea8aa56a5362f842.js   4.8 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-cd84ea8aa56a5362f842.js.map  4.36 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-f7f22962b565c9304996.js  5.32 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-f7f22962b565c9304996.js.map  4.93 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-e533204610cd764f461b.js js/application-e533204610cd764f461b.js.map
+Entrypoint custom = js/custom-a142e7e448d0e13e8b1a.js js/custom-a142e7e448d0e13e8b1a.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-cd84ea8aa56a5362f842.js js/movie_list_filter-cd84ea8aa56a5362f842.js.map
+Entrypoint movie_popup = js/movie_popup-f7f22962b565c9304996.js js/movie_popup-f7f22962b565c9304996.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 912 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-20
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-17
+
+ERROR in ./app/javascript/packs/custom.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/custom.js 1:0-17 1:0-17
+
+ERROR in ./app/javascript/packs/movie_list_filter.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_list_filter.js 1:0-17
+
+ERROR in ./app/javascript/packs/movie_popup.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_popup.js 1:0-17
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+  Rendered movies/index.html.haml within layouts/application (Duration: 2845.2ms | Allocations: 9730)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2864ms (Views: 2860.7ms | ActiveRecord: 0.5ms | Allocations: 19431)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:34:59 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 14.1ms | Allocations: 8073)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 0.7ms | Allocations: 14315)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:35:01 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.3ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.2ms | Allocations: 3156)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 7944)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:37:41 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 4.6ms | Allocations: 3641)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a49394e71448b5de6627
+Version: webpack 4.44.1
+Time: 1001ms
+Built at: 10/10/2020 8:37:43 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-d62ffcec162859fa18ff.js   128 KiB        application  [emitted] [immutable]  application
+      js/application-d62ffcec162859fa18ff.js.map   142 KiB        application  [emitted] [dev]        application
+               js/custom-a142e7e448d0e13e8b1a.js  4.36 KiB             custom  [emitted] [immutable]  custom
+           js/custom-a142e7e448d0e13e8b1a.js.map  3.68 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-cd84ea8aa56a5362f842.js   4.8 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-cd84ea8aa56a5362f842.js.map  4.36 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-aa25a32c1f2c2baf3c67.js  5.33 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-aa25a32c1f2c2baf3c67.js.map  4.94 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-d62ffcec162859fa18ff.js js/application-d62ffcec162859fa18ff.js.map
+Entrypoint custom = js/custom-a142e7e448d0e13e8b1a.js js/custom-a142e7e448d0e13e8b1a.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-cd84ea8aa56a5362f842.js js/movie_list_filter-cd84ea8aa56a5362f842.js.map
+Entrypoint movie_popup = js/movie_popup-aa25a32c1f2c2baf3c67.js js/movie_popup-aa25a32c1f2c2baf3c67.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 912 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-20
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-17
+
+ERROR in ./app/javascript/packs/custom.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/custom.js 1:0-17 1:0-17
+
+ERROR in ./app/javascript/packs/movie_list_filter.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_list_filter.js 1:0-17
+
+ERROR in ./app/javascript/packs/movie_popup.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/app/javascript/packs'
+ @ ./app/javascript/packs/movie_popup.js 1:0-17
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/pasakorn/Desktop/rottenTomatoes/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+  Rendered movies/index.html.haml within layouts/application (Duration: 2552.2ms | Allocations: 9918)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2569ms (Views: 2566.0ms | ActiveRecord: 0.3ms | Allocations: 19620)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:37:45 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 13.9ms | Allocations: 8072)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 0.7ms | Allocations: 14320)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:38:07 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 7.7ms | Allocations: 3646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 19.1ms | Allocations: 8767)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.3ms | Allocations: 18470)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:38:08 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 8.7ms | Allocations: 7309)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 13551)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:38:30 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 4.4ms | Allocations: 3459)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 11.5ms | Allocations: 8578)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms | Allocations: 18280)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:38:32 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.3ms | Allocations: 593)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 6.2ms | Allocations: 3157)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms | Allocations: 7940)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-10 08:38:47 -0700
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 11.3ms | Allocations: 5696)
+  Rendered movies/new.html.haml within layouts/application (Duration: 14.5ms | Allocations: 7841)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.1ms | Allocations: 12768)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:39:24 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 7.0ms | Allocations: 3460)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 26.0ms | Allocations: 10156)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.3ms | Allocations: 19852)
+
+
+Started GET "/movies/22" for 127.0.0.1 at 2020-10-10 08:39:26 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 22], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 22]]
+  ↳ app/views/movies/show.html.haml:20
+  Rendered movies/show.html.haml within layouts/application (Duration: 11.8ms | Allocations: 5739)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 0.6ms | Allocations: 11978)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:40:03 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 6.5ms | Allocations: 3462)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 22.7ms | Allocations: 10164)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.3ms | Allocations: 21416)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:40:04 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 24.7ms | Allocations: 6520)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 47.7ms | ActiveRecord: 0.6ms | Allocations: 14254)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:40:06 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 2.4ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 26.5ms | Allocations: 4671)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 57.1ms | ActiveRecord: 0.3ms | Allocations: 10940)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:40:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.4ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 9.1ms | Allocations: 4670)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 10945)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:40:10 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 11.6ms | Allocations: 3147)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 24.4ms | ActiveRecord: 0.8ms | Allocations: 10836)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:41:05 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (1.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.2ms | Allocations: 3460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 20.0ms | Allocations: 8588)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 47.9ms | ActiveRecord: 1.3ms | Allocations: 19838)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:41:06 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 12.3ms | Allocations: 6522)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 26.0ms | ActiveRecord: 0.5ms | Allocations: 14256)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:41:08 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.6ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 12.4ms | Allocations: 3156)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.3ms | Allocations: 9432)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:41:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.3ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 16.2ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.5ms | Allocations: 9430)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:41:38 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (1.6ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 2.5ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 9.9ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 1.8ms | Allocations: 9571)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:41:40 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 11.1ms | Allocations: 2987)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms | Allocations: 4475)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    33: 
+    34:         %br
+    35: 
+    36:         -if @current_user.name == review.moviegoer.name
+    37:           = link_to 'Edit review', edit_movie_review_path(@movie,review)
+    38:           %label /
+    39:           = link_to 'Delete review', movie_review_path(@movie,review), :method => :delete
+  
+app/views/movies/show.html.haml:36
+app/views/movies/show.html.haml:20
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-10 08:41:45 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 4.3ms | Allocations: 3004)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 4490)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    33: 
+    34:         %br
+    35: 
+    36:         -if @current_user.name == review.moviegoer.name
+    37:           = link_to 'Edit review', edit_movie_review_path(@movie,review)
+    38:           %label /
+    39:           = link_to 'Delete review', movie_review_path(@movie,review), :method => :delete
+  
+app/views/movies/show.html.haml:36
+app/views/movies/show.html.haml:20
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:41:54 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 5.4ms | Allocations: 3020)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms | Allocations: 4507)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    33: 
+    34:         %br
+    35: 
+    36:         -if @current_user.name == review.moviegoer.name
+    37:           = link_to 'Edit review', edit_movie_review_path(@movie,review)
+    38:           %label /
+    39:           = link_to 'Delete review', movie_review_path(@movie,review), :method => :delete
+  
+app/views/movies/show.html.haml:36
+app/views/movies/show.html.haml:20
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-10 08:42:08 -0700
+Started GET "/" for 127.0.0.1 at 2020-10-10 08:42:14 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:42:14 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.4ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.9ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.3ms | Allocations: 9543)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-10 08:42:17 -0700
+Started GET "/auth/twitter/callback?oauth_token=FXuadwAAAAABH7shAAABdRMtT5w&oauth_verifier=rPTGLqMvfeHxpCFSJ83b90Puy9DGHGMj" for 127.0.0.1 at 2020-10-10 08:42:39 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"FXuadwAAAAABH7shAAABdRMtT5w", "oauth_verifier"=>"rPTGLqMvfeHxpCFSJ83b90Puy9DGHGMj", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms | Allocations: 1008)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:42:42 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.6ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 8.9ms | Allocations: 3153)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 23.7ms | ActiveRecord: 0.3ms | Allocations: 9427)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2020-10-10 08:42:44 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 4], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  ↳ app/views/movies/show.html.haml:20
+  Rendered movies/show.html.haml within layouts/application (Duration: 1.7ms | Allocations: 814)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.5ms | Allocations: 8492)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:42:53 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 7.5ms | Allocations: 3147)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 0.6ms | Allocations: 10837)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:53:34 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 4.6ms | Allocations: 3512)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/pasakorn/Desktop/rottenTomatoes/public/packs
+[Webpacker] Hash: 70e2f74519e1036eae50
+Version: webpack 4.44.1
+Time: 6430ms
+Built at: 10/10/2020 8:53:43 AM
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-687916d84eb5bd9d7997.js   658 KiB        application  [emitted] [immutable]  application
+      js/application-687916d84eb5bd9d7997.js.map   770 KiB        application  [emitted] [dev]        application
+               js/custom-281750c9a59448a4ac87.js   314 KiB             custom  [emitted] [immutable]  custom
+           js/custom-281750c9a59448a4ac87.js.map   371 KiB             custom  [emitted] [dev]        custom
+    js/movie_list_filter-00c5e81cb15f76987a11.js   314 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-00c5e81cb15f76987a11.js.map   372 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-6ffc17c79ffc490ed762.js   315 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-6ffc17c79ffc490ed762.js.map   372 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.36 KiB                     [emitted]              
+Entrypoint application = js/application-687916d84eb5bd9d7997.js js/application-687916d84eb5bd9d7997.js.map
+Entrypoint custom = js/custom-281750c9a59448a4ac87.js js/custom-281750c9a59448a4ac87.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-00c5e81cb15f76987a11.js js/movie_list_filter-00c5e81cb15f76987a11.js.map
+Entrypoint movie_popup = js/movie_popup-6ffc17c79ffc490ed762.js js/movie_popup-6ffc17c79ffc490ed762.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 912 bytes {application} [built]
+[./app/javascript/packs/custom.js] 88 bytes {custom} {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 631 bytes {movie_list_filter} {application} [built]
+[./app/javascript/packs/movie_popup.js] 1.18 KiB {movie_popup} {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {custom} {movie_list_filter} {movie_popup} [built]
+    + 6 hidden modules
+
+  Rendered movies/index.html.haml within layouts/application (Duration: 8291.0ms | Allocations: 14994)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8477ms (Views: 8450.9ms | ActiveRecord: 3.7ms | Allocations: 62026)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2020-10-10 08:53:46 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 12], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendered movies/_movie_popup.html.haml (Duration: 6.4ms | Allocations: 3190)
+Completed 200 OK in 25ms (Views: 8.0ms | ActiveRecord: 1.2ms | Allocations: 11897)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2020-10-10 08:53:46 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 12], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendered movies/_movie_popup.html.haml (Duration: 0.6ms | Allocations: 191)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 2278)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:54:00 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendered movies/_movie_popup.html.haml (Duration: 0.7ms | Allocations: 194)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 2298)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:54:00 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendered movies/_movie_popup.html.haml (Duration: 0.8ms | Allocations: 193)
+Completed 200 OK in 10ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 2281)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:54:42 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 2.9ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 8.0ms | Allocations: 3159)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 23.0ms | ActiveRecord: 0.3ms | Allocations: 9452)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:55:54 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 7.2ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.haml within layouts/application (Duration: 19.9ms | Allocations: 3155)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 33.7ms | ActiveRecord: 0.5ms | Allocations: 9423)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:56:10 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 5.4ms | Allocations: 3462)
+  Rendered movies/index.html.haml within layouts/application (Duration: 30.0ms | Allocations: 7005)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.6ms | Allocations: 18283)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2020-10-10 08:56:48 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 4], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendered movies/_movie_popup.html.haml (Duration: 3.7ms | Allocations: 3230)
+Completed 200 OK in 17ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 5487)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2020-10-10 08:56:48 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mMoviegoer Load (0.6ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 4], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendered movies/_movie_popup.html.haml (Duration: 0.5ms | Allocations: 186)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 2262)
+
+
+Started GET "/movies/4/edit" for 127.0.0.1 at 2020-10-10 08:56:51 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:33:in `edit'
+  Rendering movies/edit.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 21.1ms | Allocations: 10851)
+  Rendered movies/edit.html.haml within layouts/application (Duration: 28.0ms | Allocations: 13056)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 40.5ms | ActiveRecord: 0.5ms | Allocations: 19992)
+
+
+Started GET "/movies/4/reviews/new" for 127.0.0.1 at 2020-10-10 08:56:58 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"4"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  Rendering reviews/new.html.haml within layouts/application
+  Rendered reviews/new.html.haml within layouts/application (Duration: 5.9ms | Allocations: 2553)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 20.0ms | ActiveRecord: 0.4ms | Allocations: 10406)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:57:20 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 4.2ms | Allocations: 3453)
+  Rendered movies/index.html.haml within layouts/application (Duration: 11.5ms | Allocations: 6990)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.4ms | Allocations: 18241)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:57:21 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  Rendered movies/_movie_popup.html.haml (Duration: 13.8ms | Allocations: 7335)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 1.0ms | Allocations: 9603)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:57:21 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  Rendered movies/_movie_popup.html.haml (Duration: 9.9ms | Allocations: 1589)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 3677)
+
+
+Started GET "/movies/3/reviews/new" for 127.0.0.1 at 2020-10-10 08:57:29 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"3"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  Rendering reviews/new.html.haml within layouts/application
+  Rendered reviews/new.html.haml within layouts/application (Duration: 5.3ms | Allocations: 2580)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 19.3ms | ActiveRecord: 0.4ms | Allocations: 10235)
+
+
+Started POST "/movies/3/reviews" for 127.0.0.1 at 2020-10-10 08:57:30 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"kJHmXkZs0Oos39N9hODh/qxiZvdg2/eD9L0xdFnjOy1+IbtJx8pPDwwMb6pfQl4SJSn2ZJsR2dy9YBjgmexqQQ==", "review"=>{"potatoes"=>"1", "comments"=>""}, "commit"=>"Create Review", "movie_id"=>"3"}
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "moviegoer_id", "movie_id") VALUES (?, ?, ?, ?)[0m  [["potatoes", 1], ["comments", ""], ["moviegoer_id", 1], ["movie_id", 3]]
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/movies/3
+Completed 302 Found in 33ms (ActiveRecord: 10.1ms | Allocations: 5724)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:57:30 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 22.0ms | Allocations: 7301)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 37.9ms | ActiveRecord: 0.6ms | Allocations: 15032)
+
+
+Started GET "/movies/3/reviews/7/edit" for 127.0.0.1 at 2020-10-10 08:58:06 -0700
+Processing by ReviewsController#edit as HTML
+  Parameters: {"movie_id"=>"3", "id"=>"7"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:28:in `edit'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:29:in `edit'
+  Rendering reviews/edit.html.haml within layouts/application
+  Rendered reviews/edit.html.haml within layouts/application (Duration: 3.4ms | Allocations: 2529)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 19.7ms | ActiveRecord: 0.6ms | Allocations: 10576)
+
+
+Started PUT "/movies/3/reviews/7" for 127.0.0.1 at 2020-10-10 08:58:09 -0700
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"0ur1slC8mbK7gEzF/LzMHCDMj9YUyjUKx8NmBQIm933b9WsFcGMkLpWjm0jLHOSjvB6O3xcx6cxKIsYM0gUYtg==", "review"=>{"potatoes"=>"1", "comments"=>""}, "commit"=>"Save Changes", "movie_id"=>"3", "id"=>"7"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."id" = ? LIMIT ?[0m  [["movie_id", 3], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:33:in `update'
+DEPRECATION WARNING: update_attributes! is deprecated and will be removed from Rails 6.1 (please, use update! instead) (called from update at /home/pasakorn/Desktop/rottenTomatoes/app/controllers/reviews_controller.rb:35)
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+  [1m[36mReview Update (0.4ms)[0m  [1m[33mUPDATE "reviews" SET "comments" = ? WHERE "reviews"."id" = ?[0m  [["comments", ""], ["id", 7]]
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:35:in `update'
+Redirected to http://127.0.0.1:3000/movies/3
+Completed 302 Found in 34ms (ActiveRecord: 5.2ms | Allocations: 6700)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2020-10-10 08:58:09 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 11.7ms | Allocations: 2391)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 27.9ms | ActiveRecord: 1.0ms | Allocations: 10094)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:58:16 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.3ms | Allocations: 592)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.7ms | Allocations: 1511)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.3ms | Allocations: 7889)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:58:17 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  Rendered movies/_movie_popup.html.haml (Duration: 13.0ms | Allocations: 3133)
+Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 5221)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:58:17 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  Rendered movies/_movie_popup.html.haml (Duration: 14.9ms | Allocations: 3133)
+Completed 200 OK in 25ms (Views: 15.4ms | ActiveRecord: 0.9ms | Allocations: 5221)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-10 08:58:17 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/_movie_popup.html.haml:26
+  Rendered movies/_movie_popup.html.haml (Duration: 14.2ms | Allocations: 3133)
+Completed 200 OK in 24ms (Views: 14.6ms | ActiveRecord: 0.9ms | Allocations: 5221)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-10 08:58:23 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:12
+  Rendered collection of movies/_movie.html.haml [7 times] (Duration: 1.4ms | Allocations: 592)
+  Rendered movies/index.html.haml within layouts/application (Duration: 6.9ms | Allocations: 1511)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.4ms | Allocations: 7893)
+
+
