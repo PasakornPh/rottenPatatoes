@@ -62,6 +62,22 @@ describe MoviesController do
         get :show, params: {id: @mock_movie.id}
         expect(response).to render_template(:show)
       end
-
   end
+
+  describe "DELETE #destroy" do
+    before (:each) do
+      @mock_movie = FactoryGirl.create(:movie)
+    end
+
+    it "deletes the movie" do
+      expect{
+        delete :destroy, params: {id: @mock_movie.id}
+      }.to change(Movie,:count).by(-1)
+    end
+    it "redirects to the main page " do
+      delete :destroy, params: {id: @mock_movie.id}
+      expect(response).to redirect_to(:action => 'index') 
+    end
+  end
+
 end
