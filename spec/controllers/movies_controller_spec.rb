@@ -11,6 +11,7 @@ describe MoviesController do
       #post :search_tmdb, {:search_terms => 'hardware'}
       post :search_tmdb, params: {:search_terms => 'hardware'}
     end
+
     describe 'after valid search' do
       before :each do
         allow(Movie).to receive(:find_in_tmdb).and_return(@fake_results)
@@ -24,5 +25,30 @@ describe MoviesController do
         expect(assigns(:movies)).to eq(@fake_results)
       end
     end
+  end
+
+  describe "#Create" do
+    before (:each) do
+      @mock_movie_attributes = {movie: {title: "new movie",rating: "PG",release_date: "2016-10-01",description:  "new description"}}
+
+    end
+    describe "POST #create" do
+      
+        it "saves the new movie in the database" do
+            expect {
+              post :create,params: @mock_movie_attributes
+            }.to change(Movie,:count).by(1)
+        end
+        it "assigns the saved movie to @movie" do
+            post :create,params: @mock_movie_attributes
+            expect(assigns(:movie).title).to include("New Movie")
+        end
+        it "redirects to the home page" do
+            post :create,params: @mock_movie_attributes
+            expect(response).to redirect_to(movie_path(Movie.last.id))
+        end
+    end
+
+    
   end
 end
