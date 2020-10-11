@@ -37407,3 +37407,30 @@ Processing by MoviesController#show as HTML
 Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 0.8ms | Allocations: 4789)
 
 
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 09:33:56 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 3.3ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 8.3ms | Allocations: 1297)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 4695)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-11 09:33:58 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  Rendered movies/_movie_popup.html.haml (Duration: 8.6ms | Allocations: 5775)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 7242)
+
+

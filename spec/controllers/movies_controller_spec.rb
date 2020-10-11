@@ -30,8 +30,8 @@ describe MoviesController do
   describe "#Create" do
     before (:each) do
       @mock_movie_attributes = {movie: {title: "new movie",rating: "PG",release_date: "2016-10-01",description:  "new description"}}
-
     end
+
     describe "POST #create" do
       
         it "saves the new movie in the database" do
@@ -48,7 +48,20 @@ describe MoviesController do
             expect(response).to redirect_to(movie_path(Movie.last.id))
         end
     end
+  end
 
-    
+  describe "GET #show" do
+    before (:each) do
+      @mock_movie = FactoryGirl.create(:movie)
+    end
+      it "assigns the requested movie to @movie" do
+        get :show, params: {id: @mock_movie.id}
+        expect(assigns(:movie).title).to include("A Fake Title")
+      end
+      it "renders the :show template" do
+        get :show, params: {id: @mock_movie.id}
+        expect(response).to render_template(:show)
+      end
+
   end
 end
