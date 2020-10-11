@@ -77,7 +77,10 @@ end
 
 group :development, :test do
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
+gem 'rspec'
 
 gem 'themoviedb'

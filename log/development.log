@@ -37059,3 +37059,110 @@ Processing by MoviesController#new as HTML
 Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 6609)
 
 
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:11:08 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 9.7ms | Allocations: 6298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 83.6ms | ActiveRecord: 1.5ms | Allocations: 39611)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:11:11 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"8g9FSWaQFjyHurfah9VaDI0M8VOCz7JboA1EGATJla5KP29mlcQMWvulksA39cfpTElW2MhRsMgPe49rPpZO5g==", "search_terms"=>"harry", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [20 times] (Duration: 12.3ms | Allocations: 2974)
+  Rendered movies/tmdb.html.haml within layouts/application (Duration: 21.7ms | Allocations: 5591)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 418ms (Views: 36.5ms | ActiveRecord: 0.2ms | Allocations: 10735)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:32:10 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.1ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 13.4ms | Allocations: 6298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 97.5ms | ActiveRecord: 1.4ms | Allocations: 40441)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:32:11 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"cQ3FdO9ZIIBZ/K5RL3zS2gO5Ftw+Yv5y8v4HpaIAyOjJPe9bHA065iXji0ufXE8/wvyxV3T8/OFdiMzWmF8ToA==", "search_terms"=>"", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 751)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:32:11 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.6ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.5ms | Allocations: 4498)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:32:13 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"MdJoJDu/ifLn4Bdv1oeqGm4EeWX+zqzZDz63CI6qcWCJ4kILyOuTlJv/MnVmpzf/r0He7rRQrkqgSHx7tPWqKA==", "search_terms"=>"harry", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Completed 500 Internal Server Error in 422ms (ActiveRecord: 0.1ms | Allocations: 4347)
+
+
+  
+ActionView::MissingTemplate (Missing template movies/search_tmdb, application/search_tmdb with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :haml]}. Searched in:
+  * "/home/pasakorn/Desktop/rottenPatatoes/app/views"
+  * "/home/pasakorn/.rvm/gems/ruby-2.7.0/gems/jasmine-rails-0.15.0/app/views"
+  * "/home/pasakorn/.rvm/gems/ruby-2.7.0/gems/actiontext-6.0.3.4/app/views"
+  * "/home/pasakorn/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+app/controllers/movies_controller.rb:75:in `search_tmdb'
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:32:47 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"MdJoJDu/ifLn4Bdv1oeqGm4EeWX+zqzZDz63CI6qcWCJ4kILyOuTlJv/MnVmpzf/r0He7rRQrkqgSHx7tPWqKA==", "search_terms"=>"harry", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [20 times] (Duration: 2.2ms | Allocations: 2975)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 4.8ms | Allocations: 5609)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 15486)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-11 06:32:51 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:32:51 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 8.6ms | Allocations: 4246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 7677)
+
+
