@@ -37166,3 +37166,91 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 7677)
 
 
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:40:29 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 6.7ms | Allocations: 4255)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.4ms | Allocations: 12365)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:40:31 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"THmRXyY2vFCwSQarM9lv/dHifngp8kg3aA+YJWKjO+j0Sbtw1WKmNsxWI7GD+fIYEKfZ82NsSqTHeVNWWPzgoA==", "search_terms"=>"", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 713)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:40:31 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.1ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.6ms | Allocations: 1105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 4486)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:40:36 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"eDnnwncEuiMSmWOdOMrGibsdPpbQcUN5ZLW+kter09PACc3thFCgRW6GRoeI6ltseliZHZrvQerLw3Xh7fQImw==", "search_terms"=>"about timww", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 2.7ms | Allocations: 2603)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 365ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 6943)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-11 06:40:38 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:40:38 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.5ms | Allocations: 1112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms | Allocations: 4506)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-11 06:40:41 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"R/yDK8Z8k2i5AADdrZ7EInsugwrjYN7vt1VqAP4Frj7/zKkENSiJDsUfJccdvlnHumskgan+3HwYI6FzxFp1dg==", "search_terms"=>"about time", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [15 times] (Duration: 2.6ms | Allocations: 2980)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 3.1ms | Allocations: 3098)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 335ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 7870)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-11 06:40:51 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 06:40:51 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 1105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 4480)
+
+

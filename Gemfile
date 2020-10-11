@@ -79,6 +79,7 @@ group :development, :test do
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'factory_girl'
 end
 
 gem 'rspec'
