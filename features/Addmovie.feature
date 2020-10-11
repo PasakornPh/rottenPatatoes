@@ -1,4 +1,4 @@
-Feature: User can manually add movie.
+Feature: User can manually add/update/delete movie.
 
     Scenario: Go to homepage
         Given I am on the RottenPotatoes home page
