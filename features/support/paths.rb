@@ -22,6 +22,9 @@ module NavigationHelpers
     when /^the Create New Movie page/
       '/movies/new' 
 
+    when /^the Edit Existing Movie page/
+      "/movies/#{Movie.last.id}/edit"
+
     when /^(.+) page/
       "/movies/#{Movie.last.id}"
 

@@ -1074,3 +1074,195 @@ Processing by MoviesController#index as HTML
 [Webpacker] Everything's up-to-date. Nothing to do
 Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2716)
   [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 6.4ms | Allocations: 5109)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 89.0ms | ActiveRecord: 0.9ms | Allocations: 43802)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 1.4ms | Allocations: 410)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 2760)
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 11.5ms | Allocations: 6603)
+  Rendered movies/new.html.haml within layouts/application (Duration: 14.7ms | Allocations: 8111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 18.9ms | ActiveRecord: 0.7ms | Allocations: 14246)
+Started POST "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Men In Black", "rating"=>"PG-13", "release_date(1i)"=>"2020", "release_date(2i)"=>"10", "release_date(3i)"=>"11", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Men In Black"], ["rating", "PG-13"], ["description", ""], ["release_date", "2020-10-11 00:00:00"], ["created_at", "2020-10-11 11:30:29.259805"], ["updated_at", "2020-10-11 11:30:29.259805"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms | Allocations: 1452)
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (Duration: 11.2ms | Allocations: 7631)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.8ms | Allocations: 10294)
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 1.5ms | Allocations: 410)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 2760)
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 2.1ms | Allocations: 2926)
+  Rendered movies/new.html.haml within layouts/application (Duration: 2.9ms | Allocations: 3144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 5441)
+Started POST "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Men In Black", "rating"=>"PG-13", "release_date(1i)"=>"2020", "release_date(2i)"=>"10", "release_date(3i)"=>"11", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Men In Black"], ["rating", "PG-13"], ["description", ""], ["release_date", "2020-10-11 00:00:00"], ["created_at", "2020-10-11 11:30:29.339600"], ["updated_at", "2020-10-11 11:30:29.339600"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms | Allocations: 1112)
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (Duration: 1.3ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2778)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/movies/1/edit" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/edit.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 2.6ms | Allocations: 2932)
+  Rendered movies/edit.html.haml within layouts/application (Duration: 5.9ms | Allocations: 4330)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 6848)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started PUT "/movies/1" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>{"title"=>"Men In Black 2", "rating"=>"PG-13", "release_date(1i)"=>"2020", "release_date(2i)"=>"10", "release_date(3i)"=>"11", "description"=>""}, "commit"=>"Update Movie Info", "id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Update (0.2ms)[0m  [1m[33mUPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "Men In Black 2"], ["updated_at", "2020-10-11 11:30:29.392433"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 1258)
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (Duration: 1.8ms | Allocations: 397)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 2781)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 1.6ms | Allocations: 410)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 2759)
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 2.3ms | Allocations: 2912)
+  Rendered movies/new.html.haml within layouts/application (Duration: 3.5ms | Allocations: 3130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 5427)
+Started POST "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Men In Black", "rating"=>"PG-13", "release_date(1i)"=>"2020", "release_date(2i)"=>"10", "release_date(3i)"=>"11", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Men In Black"], ["rating", "PG-13"], ["description", ""], ["release_date", "2020-10-11 00:00:00"], ["created_at", "2020-10-11 11:30:29.458248"], ["updated_at", "2020-10-11 11:30:29.458248"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 1112)
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (Duration: 1.6ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 2778)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started DELETE "/movies/1" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 629)
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 1.5ms | Allocations: 405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 2719)
+Started GET "/movies" for 127.0.0.1 at 2020-10-11 04:30:29 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 1.6ms | Allocations: 405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 2716)
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
