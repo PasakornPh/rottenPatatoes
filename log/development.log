@@ -37047,3 +37047,15 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 4535)
 
 
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-11 03:49:39 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 3.4ms | Allocations: 2926)
+  Rendered movies/new.html.haml within layouts/application (Duration: 6.9ms | Allocations: 3219)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 6609)
+
+
