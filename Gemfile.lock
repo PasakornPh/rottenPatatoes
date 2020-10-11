@@ -254,6 +254,7 @@ GEM
     parser (2.7.2.0)
       ast (~> 2.4.1)
     path_expander (1.1.0)
+    pg (1.2.3)
     phantomjs (2.1.1.0)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
@@ -428,6 +429,7 @@ DEPENDENCIES
   listen (~> 3.2)
   metric_fu
   omniauth-twitter
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rspec-rails
