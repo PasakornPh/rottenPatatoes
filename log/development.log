@@ -37434,3 +37434,574 @@ Processing by MoviesController#show as */*
 Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 7242)
 
 
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-12 08:52:09 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"r2uVc6yN7lPivU9J79x0JuhrToW3mHb5jadG8nYYI/UXW79cX9n0NZ6ialNf/OnDKS7pDv0GdGoi0Y2BTEf4vQ==", "search_terms"=>"", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms | Allocations: 741)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 08:52:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 5.4ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 27.1ms | Allocations: 1302)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 51.5ms | ActiveRecord: 0.4ms | Allocations: 4693)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:00:45 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 7.7ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 35.3ms | Allocations: 1293)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 106.9ms | ActiveRecord: 0.9ms | Allocations: 4688)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:00:48 -0700
+  
+SocketError (Failed to open TCP connection to api.twitter.com:443 (getaddrinfo: Temporary failure in name resolution)):
+  
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:960:in `initialize'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:960:in `open'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:960:in `block in connect'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/timeout.rb:95:in `block in timeout'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/timeout.rb:105:in `timeout'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:958:in `connect'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:943:in `do_start'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:932:in `start'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:1483:in `request'
+oauth (0.5.4) lib/oauth/consumer.rb:180:in `request'
+oauth (0.5.4) lib/oauth/consumer.rb:214:in `token_request'
+oauth (0.5.4) lib/oauth/consumer.rb:155:in `get_request_token'
+omniauth-oauth (1.1.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:226:in `request_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:01:10 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)):
+  
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/protocol.rb:44:in `connect_nonblock'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/protocol.rb:44:in `ssl_socket_connect'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:1009:in `connect'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:943:in `do_start'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:932:in `start'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:1483:in `request'
+oauth (0.5.4) lib/oauth/consumer.rb:180:in `request'
+oauth (0.5.4) lib/oauth/consumer.rb:214:in `token_request'
+oauth (0.5.4) lib/oauth/consumer.rb:155:in `get_request_token'
+omniauth-oauth (1.1.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:226:in `request_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:01:22 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.9ms | Allocations: 171)
+  Rendered movies/index.html.haml within layouts/application (Duration: 20.5ms | Allocations: 5206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 28.1ms | ActiveRecord: 4.0ms | Allocations: 11931)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:01:24 -0700
+  
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)):
+  
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/protocol.rb:44:in `connect_nonblock'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/protocol.rb:44:in `ssl_socket_connect'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:1009:in `connect'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:943:in `do_start'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:932:in `start'
+/home/pasakorn/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/net/http.rb:1483:in `request'
+oauth (0.5.4) lib/oauth/consumer.rb:180:in `request'
+oauth (0.5.4) lib/oauth/consumer.rb:214:in `token_request'
+oauth (0.5.4) lib/oauth/consumer.rb:155:in `get_request_token'
+omniauth-oauth (1.1.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:226:in `request_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:09:25 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.3ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 4694)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:09:29 -0700
+Started GET "/auth/twitter/callback?oauth_token=M8DAPwAAAAABH7shAAABdR4Az_0&oauth_verifier=jRFzIdv3qM7oylAiLSK3LzQD3IZ3p6Yv" for 127.0.0.1 at 2020-10-12 11:09:31 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"M8DAPwAAAAABH7shAAABdR4Az_0", "oauth_verifier"=>"jRFzIdv3qM7oylAiLSK3LzQD3IZ3p6Yv", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/moviegoer.rb:7:in `create_with_omniauth'
+  [1m[36mMoviegoer Create (0.6ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pasakorn_M"], ["provider", "twitter"], ["uid", "1307745051758530560"], ["created_at", "2020-10-12 18:09:32.891922"], ["updated_at", "2020-10-12 18:09:32.891922"]]
+  ↳ app/models/moviegoer.rb:7:in `create_with_omniauth'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/moviegoer.rb:7:in `create_with_omniauth'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 29ms (ActiveRecord: 8.2ms | Allocations: 7442)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:09:32 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.8ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.6ms | Allocations: 4700)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-12 11:09:58 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yNBtiGy57eO68Nv0xId4UzbO1evAj8ir/La9VdP/wgRw4Eenn+33hcbv/u50p+W294tyYIoRyjhTwHYm6aAZTA=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:09:58 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.5ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.4ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 4826)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:10:02 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.7ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.6ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 4803)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:11:11 -0700
+Started GET "/auth/twitter/callback?oauth_token=qsN6bwAAAAABH7shAAABdR4CXC0&oauth_verifier=tgQgDlEDvehJOOsIGkBTHVgkYW4wFbnI" for 127.0.0.1 at 2020-10-12 11:11:12 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"qsN6bwAAAAABH7shAAABdR4CXC0", "oauth_verifier"=>"tgQgDlEDvehJOOsIGkBTHVgkYW4wFbnI", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:13 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.7ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.4ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 4686)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-12 11:11:17 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DRwWHyqEDExRwbpzpjLNCjPULAqy4Ru7BXHi2WOCVhK1LDww2dAWKi3en2kWElDv8pGLgfh/GSiqBymqWd2NWg=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:17 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.5ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.8ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 4805)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:11:19 -0700
+Started GET "/auth/twitter/callback?oauth_token=j7Pn7QAAAAABH7shAAABdR4CfQ8&oauth_verifier=oWmIHObu3W3Se5vkPLHTEDaXMT27IJHj" for 127.0.0.1 at 2020-10-12 11:11:21 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"j7Pn7QAAAAABH7shAAABdR4CfQ8", "oauth_verifier"=>"oWmIHObu3W3Se5vkPLHTEDaXMT27IJHj", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:22 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.7ms | Allocations: 1272)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 4693)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-12 11:11:25 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cXtg1eoWPbcdsCkqY22XhsG2fS6f9OwYTdXHMolb8lPJS0r6GUIn0WGvDDDTTQpjAPPapdVq7oviowxBswQpGw=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:25 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.8ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.8ms | Allocations: 4805)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:11:26 -0700
+Started GET "/auth/twitter/callback?oauth_token=bBTMMQAAAAABH7shAAABdR4Cmbo&oauth_verifier=YguNPSUHHUKAFI7bzzOVo8JLq57ebjGp" for 127.0.0.1 at 2020-10-12 11:11:28 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"bBTMMQAAAAABH7shAAABdR4Cmbo", "oauth_verifier"=>"YguNPSUHHUKAFI7bzzOVo8JLq57ebjGp", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 868)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:30 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.4ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 4686)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-12 11:11:37 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Yrn248lzhSVus4uxWGVmMdNirPzd64qORN+0R6SrPVHaidzMOiefQxKsrqvoRfvUEicLd5d1iB3rqX80nvTmGQ=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:37 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.6ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 4805)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:11:39 -0700
+Started GET "/auth/twitter/callback?oauth_token=BZVPYAAAAAABH7shAAABdR4Cy30&oauth_verifier=SLpMM4P84ItBq77gC1QhxAua5Y73CiqK" for 127.0.0.1 at 2020-10-12 11:11:41 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"BZVPYAAAAAABH7shAAABdR4Cy30", "oauth_verifier"=>"SLpMM4P84ItBq77gC1QhxAua5Y73CiqK", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:42 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 1.4ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.9ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 4686)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-12 11:11:49 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G0mDd5I4uCyNvuZbkZr6TDIhbkVj2KsTHi86DghbGWOjealYYWyiSvGhw0Ehumep82TJzilGqYCxWfF9MgTCKw=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:49 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.6ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.2ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 4805)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:11:50 -0700
+Started GET "/auth/twitter/callback?oauth_token=Z0h_swAAAAABH7shAAABdR4C9Vs&oauth_verifier=PG628vxXwpBGjK3UHb7ieyqkINcDyOPZ" for 127.0.0.1 at 2020-10-12 11:11:51 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"Z0h_swAAAAABH7shAAABdR4C9Vs", "oauth_verifier"=>"PG628vxXwpBGjK3UHb7ieyqkINcDyOPZ", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:53 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.7ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.6ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 21.8ms | ActiveRecord: 0.3ms | Allocations: 4692)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-12 11:11:56 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wnkDUY0pcZZub+BudhB7EzY1ikuCyDkF3Vyg7g4fpQ16SSl+fn1r8BJwxXTGMOb293AtwMhWO5ZyKmudNEB+RQ=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:11:56 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.5ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.6ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 4805)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:12:01 -0700
+Started GET "/auth/twitter/callback?oauth_token=iyN-LQAAAAABH7shAAABdR4DIAM&oauth_verifier=lqxiEd90xEAjxmixODIcTPhm0M4OAs8t" for 127.0.0.1 at 2020-10-12 11:12:02 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"iyN-LQAAAAABH7shAAABdR4DIAM", "oauth_verifier"=>"lqxiEd90xEAjxmixODIcTPhm0M4OAs8t", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:12:04 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.9ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.9ms | Allocations: 1274)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.3ms | Allocations: 4695)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 11:12:10 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [2 times] (Duration: 0.8ms | Allocations: 156)
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.0ms | Allocations: 1286)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.2ms | Allocations: 4818)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:12:11 -0700
