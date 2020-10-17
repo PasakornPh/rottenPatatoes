@@ -38005,3 +38005,731 @@ Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.2ms | Allocations: 481
 
 
 Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 11:12:11 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20200819074119)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200819074119"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMoviegoers (20200920172710)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "moviegoers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "provider" varchar, "uid" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200920172710"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20200928154353)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "potatoes" integer, "comments" text, "moviegoer_id" integer, "movie_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_moviegoer_id" ON "reviews" ("moviegoer_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928154353"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-12 20:08:09.107455"], ["updated_at", "2020-10-12 20:08:09.107455"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 13:08:19 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 10.2ms | Allocations: 6296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 130.7ms | ActiveRecord: 2.3ms | Allocations: 42374)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2020-10-12 13:08:20 -0700
+Started GET "/auth/twitter/callback?oauth_token=sUtZ_gAAAAABH7shAAABdR5tnDw&oauth_verifier=fyzdAHf6gltypFizRcAn65rqcwg8pJMr" for 127.0.0.1 at 2020-10-12 13:08:22 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"sUtZ_gAAAAABH7shAAABdR5tnDw", "oauth_verifier"=>"fyzdAHf6gltypFizRcAn65rqcwg8pJMr", "provider"=>"twitter"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."provider" = ? AND "moviegoers"."uid" = ? ORDER BY "moviegoers"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "1307745051758530560"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/moviegoer.rb:7:in `create_with_omniauth'
+  [1m[36mMoviegoer Create (0.4ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pasakorn_M"], ["provider", "twitter"], ["uid", "1307745051758530560"], ["created_at", "2020-10-12 20:08:23.831573"], ["updated_at", "2020-10-12 20:08:23.831573"]]
+  ↳ app/models/moviegoer.rb:7:in `create_with_omniauth'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/moviegoer.rb:7:in `create_with_omniauth'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 20ms (ActiveRecord: 3.3ms | Allocations: 7805)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 13:08:23 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.2ms | Allocations: 1111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 4678)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-12 13:08:26 -0700
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 8.5ms | Allocations: 7235)
+  Rendered movies/new.html.haml within layouts/application (Duration: 11.2ms | Allocations: 9333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 16.7ms | ActiveRecord: 0.5ms | Allocations: 16285)
+
+
+Started POST "/movies" for 127.0.0.1 at 2020-10-12 13:08:29 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"WCqG4yIAQj2mU2GFSqPlgpJD+qhe9GER9VKOqlu5Ig7gGqzM0VRYW9pMRJ/6g3hnUwZdIxRqY4JaJEXZYeb5Rg==", "movie"=>{"title"=>"jjj", "rating"=>"G", "release_date(1i)"=>"2020", "release_date(2i)"=>"10", "release_date(3i)"=>"12", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:24:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jjj"], ["rating", "G"], ["description", ""], ["release_date", "2020-10-12 00:00:00"], ["created_at", "2020-10-12 20:08:29.708330"], ["updated_at", "2020-10-12 20:08:29.708330"]]
+  ↳ app/controllers/movies_controller.rb:24:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/movies/1
+Completed 302 Found in 15ms (ActiveRecord: 2.0ms | Allocations: 4502)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2020-10-12 13:08:29 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.haml:20
+  Rendered movies/show.html.haml within layouts/application (Duration: 6.1ms | Allocations: 5835)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 10.4ms | ActiveRecord: 1.8ms | Allocations: 13814)
+
+
+Started DELETE "/movies/1" for 127.0.0.1 at 2020-10-12 13:08:31 -0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NZKvMr5HB+yh/m+d54NDyV25fdiJoTzPwyI0bvERw++NooUdTRMdit3hSodXo94snPzaU8M/PlxsVP8dy04Ypw==", "id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:47:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:48:in `destroy'
+  [1m[36mMovie Destroy (0.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/movies_controller.rb:48:in `destroy'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:48:in `destroy'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms | Allocations: 4082)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-12 13:08:31 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.8ms | Allocations: 1107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 4526)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:15:03 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"0H7hLvDXMieYzAfo4fW8X3DYc3mGsumlzsXFU5gdKodoTssBA4MoQeTTIvJR1SG6sZ3U8sws6zZhsw4gokLxzw==", "search_terms"=>"harry", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Completed 500 Internal Server Error in 521ms (ActiveRecord: 0.3ms | Allocations: 2347)
+
+
+  
+JSON::ParserError (783: unexpected token at '<html>
+<head>
+<title>Redirect</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+
+</head>
+
+
+<body>
+   
+    <center>
+        กรุณาเปิดใช้งาน javascript ใน browser ของท่าน<br />JavaScript required. Enable JavaScript to continue.<br /><br />
+        หากไม่เปลี่ยนหน้ากรุณากดปุ่ม 'Continue' ด้านล่าง<br />
+        If you are not redirected in a few seconds, click 'Continue' below<br />
+        
+        <form name="redirect" action="https://socialwifi.3bb.co.th/social_wifi_frontend/tbbcore/login/sym_SCW600346243" method="post">
+            <input type="hidden" name="mac" value="A0:A8:CD:74:3D:C6">
+            <input type="hidden" name="ip" value="192.168.182.211">
+            <input type="hidden" name="hostname" value="status.3bbwifi.com">
+            <input type="hidden" name="username" value="">
+            <input type="hidden" name="link-login" value="https://status.3bbwifi.com/login?dst=http%3A%2F%2Fapi.themoviedb.org%2F3%2Fsearch%2Fmovie%3Fquery%3Dharry%26api%5Fkey%3D3aac87b582add098b2946544973b0b02">
+            <input type="hidden" name="link-orig" value="http://api.themoviedb.org/3/search/movie?query=harry&amp;api_key=3aac87b582add098b2946544973b0b02">
+            <input type="hidden" name="error" value="">
+            <input type="hidden" name="chap-id" value="">
+            <input type="hidden" name="chap-challenge" value="">
+            <input type="hidden" name="link-login-only" value="https://status.3bbwifi.com/login">
+            <input type="hidden" name="link-orig-esc" value="http%3A%2F%2Fapi.themoviedb.org%2F3%2Fsearch%2Fmovie%3Fquery%3Dharry%26api%5Fkey%3D3aac87b582add098b2946544973b0b02">
+            <input type="hidden" name="mac-esc" value="A0%3AA8%3ACD%3A74%3A3D%3AC6">
+            <input type="hidden" name="login-by" value="">
+            <input type="hidden" name="domain" value="">
+            <input type="hidden" name="error-orig" value="">
+            <input type="hidden" name="identity" value="SCW600346243">
+            <input type="hidden" name="popup" value="true">
+            <input type="hidden" name="server-address" value="192.168.182.1:443">
+            <input type="submit" value="Continue">
+        </form>
+    </center>
+</body>
+<script language="JavaScript">
+	document.redirect.submit();
+</script>
+</html>'):
+  
+app/models/movie.rb:40:in `find_in_tmdb'
+app/controllers/movies_controller.rb:73:in `search_tmdb'
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:15:10 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.0ms | Allocations: 1140)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.3ms | Allocations: 4631)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:15:15 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"ixrvuxIhtUStPjgNTDMccF/3oAI4A9F0auhvkzbFJrszKsWU4XWvItEhHRf8E4GVnrIHiXKd0+fFnqTgDJr98w==", "search_terms"=>"harr", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Completed 500 Internal Server Error in 841ms (ActiveRecord: 0.1ms | Allocations: 2322)
+
+
+  
+JSON::ParserError (783: unexpected token at '<html>
+<head>
+<title>Redirect</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+
+</head>
+
+
+<body>
+   
+    <center>
+        กรุณาเปิดใช้งาน javascript ใน browser ของท่าน<br />JavaScript required. Enable JavaScript to continue.<br /><br />
+        หากไม่เปลี่ยนหน้ากรุณากดปุ่ม 'Continue' ด้านล่าง<br />
+        If you are not redirected in a few seconds, click 'Continue' below<br />
+        
+        <form name="redirect" action="https://socialwifi.3bb.co.th/social_wifi_frontend/tbbcore/login/sym_SCW600346243" method="post">
+            <input type="hidden" name="mac" value="A0:A8:CD:74:3D:C6">
+            <input type="hidden" name="ip" value="192.168.182.211">
+            <input type="hidden" name="hostname" value="status.3bbwifi.com">
+            <input type="hidden" name="username" value="">
+            <input type="hidden" name="link-login" value="https://status.3bbwifi.com/login?dst=http%3A%2F%2Fapi.themoviedb.org%2F3%2Fsearch%2Fmovie%3Fquery%3Dharr%26api%5Fkey%3D3aac87b582add098b2946544973b0b02">
+            <input type="hidden" name="link-orig" value="http://api.themoviedb.org/3/search/movie?query=harr&amp;api_key=3aac87b582add098b2946544973b0b02">
+            <input type="hidden" name="error" value="">
+            <input type="hidden" name="chap-id" value="">
+            <input type="hidden" name="chap-challenge" value="">
+            <input type="hidden" name="link-login-only" value="https://status.3bbwifi.com/login">
+            <input type="hidden" name="link-orig-esc" value="http%3A%2F%2Fapi.themoviedb.org%2F3%2Fsearch%2Fmovie%3Fquery%3Dharr%26api%5Fkey%3D3aac87b582add098b2946544973b0b02">
+            <input type="hidden" name="mac-esc" value="A0%3AA8%3ACD%3A74%3A3D%3AC6">
+            <input type="hidden" name="login-by" value="">
+            <input type="hidden" name="domain" value="">
+            <input type="hidden" name="error-orig" value="">
+            <input type="hidden" name="identity" value="SCW600346243">
+            <input type="hidden" name="popup" value="true">
+            <input type="hidden" name="server-address" value="192.168.182.1:443">
+            <input type="submit" value="Continue">
+        </form>
+    </center>
+</body>
+<script language="JavaScript">
+	document.redirect.submit();
+</script>
+</html>'):
+  
+app/models/movie.rb:40:in `find_in_tmdb'
+app/controllers/movies_controller.rb:73:in `search_tmdb'
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:16:15 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 13.7ms | Allocations: 6298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 114.9ms | ActiveRecord: 1.7ms | Allocations: 42885)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:16:51 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 1718)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 1.5ms | Allocations: 11361)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:16:55 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"ed2Mdn4rduvDHyWF9/2C6JWnlA4Pezo1mK4TH6WDVRDB7aZZjX9sjb8AAJ9H3R8NVOIzhUXlOKY32Nhsn9yOWA==", "search_terms"=>"about time", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [15 times] (Duration: 2.0ms | Allocations: 2865)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 4.8ms | Allocations: 5479)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1208ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 10489)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:19:11 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"ed2Mdn4rduvDHyWF9/2C6JWnlA4Pezo1mK4TH6WDVRDB7aZZjX9sjb8AAJ9H3R8NVOIzhUXlOKY32Nhsn9yOWA==", "search_terms"=>"about time", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [15 times] (Duration: 14.7ms | Allocations: 7439)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 18.2ms | Allocations: 10026)
+Completed 500 Internal Server Error in 711ms (ActiveRecord: 0.1ms | Allocations: 13214)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<Tmdb::Movie:0x00007fc9b40626d0>):
+    3:   %td 
+    4:     %img{:src => 'https://image.tmdb.org/t/p/w300' + tmdb_movie.poster_path.to_s}
+    5:   %td= tmdb_movie.title 
+    6:   %td= tmdb_movie.rating
+    7:   %td= tmdb_movie.release_date
+  
+app/views/movies/_tmdb_movie.html.haml:6
+app/views/movies/search_tmdb.html.haml:11
+app/controllers/movies_controller.rb:75:in `search_tmdb'
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:19:57 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"ed2Mdn4rduvDHyWF9/2C6JWnlA4Pezo1mK4TH6WDVRDB7aZZjX9sjb8AAJ9H3R8NVOIzhUXlOKY32Nhsn9yOWA==", "search_terms"=>"about time", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [15 times] (Duration: 2.9ms | Allocations: 2852)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 6.4ms | Allocations: 5472)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 416ms (Views: 16.8ms | ActiveRecord: 0.2ms | Allocations: 15199)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 09:22:13 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:22:13 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 6.4ms | Allocations: 4246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 7718)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:24:03 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.7ms | Allocations: 4236)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 12372)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:24:07 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"Rqm5Rg5FJEQMnNr+FMKt/bw8eM/8Kndk8jmGQ/SnfKj+mZNp/RE+InCD/+Sk4jAYfXnfRLa0dfddT00wzvin4A==", "search_terms"=>"harry", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [20 times] (Duration: 1.6ms | Allocations: 2854)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 4.5ms | Allocations: 5445)
+Completed 500 Internal Server Error in 719ms (ActiveRecord: 0.2ms | Allocations: 8127)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %tr
+  %td= tmdb_movie_counter + 1
+  %td= %img{:src => 'https://image.tmdb.org/t/p/w300' + tmdb_movie.poster_path.to_s}
+  %td= tmdb_movie.title 
+  %td= tmdb_movie.release_date
+):
+1:    %tr
+2:      %td= tmdb_movie_counter + 1
+3:      %td= %img{:src => 'https://image.tmdb.org/t/p/w300' + tmdb_movie.poster_path.to_s}
+4:      %td= tmdb_movie.title 
+5:      %td= tmdb_movie.release_date
+  
+app/views/movies/_tmdb_movie.html.haml:3: unknown type of %string
+app/views/movies/_tmdb_movie.html.haml:3: syntax error, unexpected end-of-input
+app/views/movies/_tmdb_movie.html.haml:3: unknown type of %string
+app/views/movies/_tmdb_movie.html.haml:3: syntax error, unexpected end-of-input
+app/views/movies/_tmdb_movie.html.haml:3: unknown type of %string
+app/views/movies/_tmdb_movie.html.haml:3: syntax error, unexpected end-of-input
+app/views/movies/_tmdb_movie.html.haml:3: unknown type of %string
+app/views/movies/_tmdb_movie.html.haml:3: syntax error, unexpected end-of-input
+app/views/movies/_tmdb_movie.html.haml:3: unknown type of %string
+app/views/movies/_tmdb_movie.html.haml:3: syntax error, unexpected end-of-input
+app/views/movies/_tmdb_movie.html.haml:3: unknown type of %string
+app/views/movies/_tmdb_movie.html.haml:3: syntax error, unexpected end-of-input
+app/views/movies/search_tmdb.html.haml:11
+app/controllers/movies_controller.rb:75:in `search_tmdb'
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:24:21 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"Rqm5Rg5FJEQMnNr+FMKt/bw8eM/8Kndk8jmGQ/SnfKj+mZNp/RE+InCD/+Sk4jAYfXnfRLa0dfddT00wzvin4A==", "search_terms"=>"harry", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [20 times] (Duration: 2.9ms | Allocations: 2960)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 5.5ms | Allocations: 5555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 363ms (Views: 14.7ms | ActiveRecord: 0.1ms | Allocations: 15377)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 09:24:25 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:24:25 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.8ms | Allocations: 4240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 7696)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:24:37 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"rjn/1x78PXoFi4tZAjG8xsvwo72q5lIIQ0aqAFwrFzMWCdX47agnHHmUrkOyESEjCrUENuB4UJvsMGFzZnTMew==", "search_terms"=>"tenet", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [3 times] (Duration: 0.1ms | Allocations: 67)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 0.5ms | Allocations: 184)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 629ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 4609)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 09:24:41 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:24:41 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.5ms | Allocations: 1100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4515)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:24:47 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 1106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 4532)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:30:53 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"SmxfIYFfcGzgTkS94dLwmI5RaTNub8Gq5hUDCV6OiGTyXHUOcgtqCpxRYadR8m19TxTOuCTxwzlJY8h6ZNFTLA==", "search_terms"=>"about", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [20 times] (Duration: 2.5ms | Allocations: 2953)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 5.6ms | Allocations: 5548)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 664ms (Views: 20.1ms | ActiveRecord: 0.2ms | Allocations: 15380)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 09:31:39 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:31:39 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.4ms | Allocations: 4256)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 7712)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-13 09:32:20 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"GfzEZIzaFswlo5G6hiZDyql1+Y+WJbTOdvzLLILobdmhzO5Lf44Mqlm8tKA2Bt4vaDBeBNy7tl3ZigBfuLe2kQ==", "search_terms"=>"adob", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [9 times] (Duration: 0.3ms | Allocations: 198)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 0.9ms | Allocations: 314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2425ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 4982)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 09:33:02 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:33:02 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.3ms | Allocations: 1100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4515)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2020-10-13 09:55:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/_movie_form.html.haml (Duration: 27.2ms | Allocations: 10080)
+  Rendered movies/new.html.haml within layouts/application (Duration: 32.3ms | Allocations: 12171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 41.1ms | ActiveRecord: 0.5ms | Allocations: 19182)
+
+
+Started POST "/movies" for 127.0.0.1 at 2020-10-13 09:55:33 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"TcLdN1wHXz1SRWTM3+s3xl9Cx4omS3zH0frTyHk2tXL18vcYr1NFWy5aQdZvy6ojngdgAWzVflR+jBi7Q2luOg==", "movie"=>{"title"=>"fdgdfg", "rating"=>"G", "release_date(1i)"=>"2020", "release_date(2i)"=>"10", "release_date(3i)"=>"13", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:24:in `create'
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Fdgdfg"], ["rating", "G"], ["description", ""], ["release_date", "2020-10-13 00:00:00"], ["created_at", "2020-10-13 16:55:33.467416"], ["updated_at", "2020-10-13 16:55:33.467416"]]
+  ↳ app/controllers/movies_controller.rb:24:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/movies/2
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms | Allocations: 4637)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-13 09:55:33 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  Rendered movies/show.html.haml within layouts/application (Duration: 12.2ms | Allocations: 5830)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 19.0ms | ActiveRecord: 1.8ms | Allocations: 13953)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-13 09:55:37 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [1 times] (Duration: 3.4ms | Allocations: 2739)
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.4ms | Allocations: 3862)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 7181)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-13 09:55:40 -0700
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/_movie_popup.html.haml:20
+  Rendered movies/_movie_popup.html.haml (Duration: 5.6ms | Allocations: 5657)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 7929)
+
+
+Started GET "/movies/2/reviews/new" for 127.0.0.1 at 2020-10-13 09:55:44 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  Rendering reviews/new.html.haml within layouts/application
+  Rendered reviews/new.html.haml within layouts/application (Duration: 3.3ms | Allocations: 2478)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 10857)
+
+
+Started POST "/movies/2/reviews" for 127.0.0.1 at 2020-10-13 09:55:49 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"OxmspcY1YBPkPtky2/1IhLkdMKVxVtLs6XQ/Xof65jeDKYaKNWF6dZgh/Chr3dVheFiXLjvI0H9GAvQtvaU9fw==", "review"=>{"potatoes"=>"1", "comments"=>""}, "commit"=>"Create Review", "movie_id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `has_moviegoer_and_movie'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "moviegoer_id", "movie_id") VALUES (?, ?, ?, ?)[0m  [["potatoes", 1], ["comments", ""], ["moviegoer_id", 1], ["movie_id", 2]]
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/movies/2
+Completed 302 Found in 17ms (ActiveRecord: 3.1ms | Allocations: 6007)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-13 09:55:49 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 8.3ms | Allocations: 1769)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 20.3ms | ActiveRecord: 0.5ms | Allocations: 6508)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2020-10-17 10:51:35 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mMovie Load (4.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `show'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `show'
+  Rendering movies/show.html.haml within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.haml:20
+  [1m[36mCACHE Moviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.haml:26
+  Rendered movies/show.html.haml within layouts/application (Duration: 20.5ms | Allocations: 2472)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 164ms (Views: 33.8ms | ActiveRecord: 6.1ms | Allocations: 19939)
+
+
+Started POST "/logout" for 127.0.0.1 at 2020-10-17 10:51:37 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ncuaej3ylb1P8Z1XTv36NxenMk0DehGDFkpaTCaw31Ml+7BVzqaP2zPuuE3+3WfS1uKVxknkExC5PJE/HO8EGw=="}
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 240)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-17 10:51:37 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [1 times] (Duration: 0.6ms | Allocations: 85)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.9ms | Allocations: 1640)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.5ms | Allocations: 5190)
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-10-17 10:51:38 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [1 times] (Duration: 0.4ms | Allocations: 85)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 1187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 4719)
+
+
+Started POST "/movies/search_tmdb" for 127.0.0.1 at 2020-10-17 10:51:43 -0700
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"authenticity_token"=>"zfPDk3ltSUZOtCUlyKgsyyesjC9nJrrWInC9zxAqQZN1w+m8ijlTIDKrAD94iLEu5ukrpC24uEWNBna8KnWa2w==", "search_terms"=>"about", "commit"=>"Search TMDb"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/search_tmdb.html.haml within layouts/application
+  Rendered collection of movies/_tmdb_movie.html.haml [20 times] (Duration: 0.4ms | Allocations: 428)
+  Rendered movies/search_tmdb.html.haml within layouts/application (Duration: 1.2ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 733ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 5746)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 10:51:47 -0700
+Started GET "/movies" for 127.0.0.1 at 2020-10-17 10:51:47 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/views/movies/index.html.haml:13
+  Rendered collection of movies/_movie.html.haml [1 times] (Duration: 0.4ms | Allocations: 85)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.4ms | Allocations: 1187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4719)
+
+

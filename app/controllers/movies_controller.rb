@@ -1,7 +1,7 @@
 
 # This file is app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
-    skip_before_action :authenticate!, only: [ :show, :index ]
+    skip_before_action :authenticate!, only: [ :show, :index, :search_tmdb ]
     def index
         @movies = Movie.all.order(:title) 
     end
