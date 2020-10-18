@@ -72,6 +72,13 @@ class MoviesController < ApplicationController
         if @search_terms != ""
             @movies = Movie.find_in_tmdb(params[:search_terms])
             if @movies
+                @movies.each do |movie_each|
+                    @movie = Movie.new(title: movie_each.title, rating: "G" , release_date: movie_each.release_date , description: movie_each.overview)
+                    if !(Movie.exists?(title: movie_each.title, description: movie_each.overview))
+                        @movie.save
+                    end
+                        
+                end
                 render 'search_tmdb'
             else
                 flash[:warning] = "'#{params[:search_terms]}' was not found in TMDb."
